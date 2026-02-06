@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso | Simulador de Metas</title>
+
+      <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-light">
+
+    <nav class="site-nav">
+        <a href="./" class="site-nav__link">ðŸŽ¯ <span id="nav-home">InÃ­cio</span></a>
+        <a href="calculadora-salario/index.html" class="site-nav__link">ðŸ’¸ <span id="nav-salary">SalÃ¡rio</span></a>
+        <a href="calculadora-13-salario/index.html" class="site-nav__link">ðŸŽ„ <span id="nav-13">13Âº SalÃ¡rio</span></a>
+    </nav>
+
+    <main class="page-main page-main--centered">
+        <div class="page-card">  
+            <div class="lang-switch">
+                <button onclick="showLang('pt')" id="btn-pt" class="btn-lang btn-lang--active">PortuguÃªs</button>
+                <button onclick="showLang('en')" id="btn-en" class="btn-lang btn-lang--inactive">English</button>
+            </div>
+
+            <div id="terms-pt">
+                <h1>Termos e CondiÃ§Ãµes de Uso</h1>
+                <div>
+                    <p>Ao utilizar o <strong>Simulador de Metas</strong>, vocÃª concorda com os seguintes termos:</p>
+                    <ul>
+                        <li>Os cÃ¡lculos sÃ£o estimativas baseadas em taxas atuais.</li>
+                        <li>NÃ£o fornecemos recomendaÃ§Ãµes de investimento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="terms-en" class="is-hidden">
+                <h1>Terms and Conditions of Use</h1>
+                <div>
+                    <p>By using <strong>Simulador de Metas</strong>, you agree to the following terms:</p>
+                    <ul>
+                        <li>Calculations are estimates based on current rates.</li>
+                        <li>We do not provide investment advice.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-back">
+                <a href="./" class="page-back__link">â† <span id="back-text">Voltar ao InÃ­cio</span></a>
+            </div>
+        </div>
+    </main>
+
+   <footer class="site-footer">
+    
+    <div class="footer-disclaimer">
+        <p id="footer-disclaimer">
+            <strong>Aviso:</strong> Os cÃ¡lculos exibidos neste portal sÃ£o estimativas baseadas em taxas vigentes e servem apenas para fins informativos. NÃ£o constituem aconselhamento financeiro oficial ou recomendaÃ§Ã£o de investimento.
+        </p>
+    </div>
+
+    <p>&copy; 2026 <strong>Simulador de Metas</strong>. <span id="footer-rights">Todos os direitos reservados.</span></p>
+    
+    <p class="footer-contact">
+        <span id="footer-contact-text">Contato:</span> 
+        <a href="mailto:suporte@simuladormetas.com.br" class="footer-email">suporte@simuladormetas.com.br</a>
+    </p>
+
+    <div class="footer-links">
+        <a href="sobre.html" class="footer-link">Sobre</a> |
+        <a href="contato.html" class="footer-link">Contato</a> |
+        <a href="politica.html" class="footer-link">Privacidade</a> | 
+        <a href="termos.html" class="footer-link">Termos de Uso</a>
+    </div>
+</footer>
+
+    <script>
+        function showLang(lang) {
+            document.getElementById('terms-pt').style.display = lang === 'pt' ? 'block' : 'none';
+            document.getElementById('terms-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('back-text').innerText = lang === 'pt' ? 'Voltar ao InÃ­cio' : 'Back to Home';
+            document.getElementById('btn-pt').style.background = lang === 'pt' ? '#3483fa' : '#eee';
+            document.getElementById('btn-pt').style.color = lang === 'pt' ? 'white' : '#666';
+            document.getElementById('btn-en').style.background = lang === 'en' ? '#3483fa' : '#eee';
+            document.getElementById('btn-en').style.color = lang === 'en' ? 'white' : '#666';
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Contact - Simulador de Metas</title>
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-light">
+
+    <nav class="site-nav">
+        <a href="./" class="site-nav__link">ðŸŽ¯ <span id="nav-home">InÃ­cio</span></a>
+        <a href="calculadora-salario/index.html" class="site-nav__link">ðŸ’¸ <span id="nav-salary">SalÃ¡rio</span></a>
+        <a href="calculadora-13-salario/index.html" class="site-nav__link">ðŸŽ„ <span id="nav-13">13Âº SalÃ¡rio</span></a>
+    </nav>
+
+    <main class="page-main page-main--centered">
+        <div class="page-card page-card--narrow page-card--centered">
+            
+            <div class="lang-switch">
+                <button onclick="showLang('pt')" id="btn-pt" class="btn-lang btn-lang--active">PortuguÃªs</button>
+                <button onclick="showLang('en')" id="btn-en" class="btn-lang btn-lang--inactive">English</button>
+            </div>
+
+            <div id="contact-pt">
+                <h1>Fale Conosco</h1>
+                <p class="page-lead">Tem alguma dÃºvida ou sugestÃ£o? Entre em contato pelo e-mail oficial abaixo:</p>
+            </div>
+
+            <div id="contact-en" class="is-hidden">
+                <h1>Contact Us</h1>
+                <p class="page-lead">Do you have any questions or suggestions? Reach out via our official email below:</p>
+            </div>
+            
+            <div class="contact-box">
+                <p class="contact-email">suporte@simuladormetas.com.br</p>
+            </div>
+
+            <div class="page-back">
+                <a href="./" class="page-back__link">â† <span id="back-text">Voltar ao Simulador</span></a>
+            </div>
+        </div>
+    </main>
+
+  <footer class="site-footer">
+    
+    <div class="footer-disclaimer">
+        <p id="footer-disclaimer">
+            <strong>Aviso:</strong> Os cÃ¡lculos exibidos neste portal sÃ£o estimativas baseadas em taxas vigentes e servem apenas para fins informativos. NÃ£o constituem aconselhamento financeiro oficial ou recomendaÃ§Ã£o de investimento.
+        </p>
+    </div>
+
+    <p>&copy; 2026 <strong>Simulador de Metas</strong>. <span id="footer-rights">Todos os direitos reservados.</span></p>
+    
+    <p class="footer-contact">
+        <span id="footer-contact-text">Contato:</span> 
+        <a href="mailto:suporte@simuladormetas.com.br" class="footer-email">suporte@simuladormetas.com.br</a>
+    </p>
+
+    <div class="footer-links">
+        <a href="sobre.html" class="footer-link">Sobre</a> |
+        <a href="contato.html" class="footer-link">Contato</a> |
+        <a href="politica.html" class="footer-link">Privacidade</a> | 
+        <a href="termos.html" class="footer-link">Termos de Uso</a>
+    </div>
+</footer>
+
+    <script>
+        function showLang(lang) {
+            document.getElementById('contact-pt').style.display = lang === 'pt' ? 'block' : 'none';
+            document.getElementById('contact-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('back-text').innerText = lang === 'pt' ? 'Voltar ao Simulador' : 'Back to Simulator';
+            document.getElementById('btn-pt').style.background = lang === 'pt' ? '#3483fa' : '#eee';
+            document.getElementById('btn-pt').style.color = lang === 'pt' ? 'white' : '#666';
+            document.getElementById('btn-en').style.background = lang === 'en' ? '#3483fa' : '#eee';
+            document.getElementById('btn-en').style.color = lang === 'en' ? 'white' : '#666';
+        }
+    </script>
+</body>
+</html>
+
