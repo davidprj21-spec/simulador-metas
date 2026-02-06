@@ -5,88 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos de Uso | Simulador de Metas</title>
 
-      <link rel="icon" href="./favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="canonical" href="https://simuladormetas.com.br/termos.html">
 </head>
 <body class="page-light">
 
     <nav class="site-nav">
-        <a href="./" class="site-nav__link">ðŸŽ¯ <span id="nav-home">InÃ­cio</span></a>
-        <a href="calculadora-salario/index.html" class="site-nav__link">ðŸ’¸ <span id="nav-salary">SalÃ¡rio</span></a>
-        <a href="calculadora-13-salario/index.html" class="site-nav__link">ðŸŽ„ <span id="nav-13">13Âº SalÃ¡rio</span></a>
+        <a href="./" class="site-nav__link">🎯 <span>Início</span></a>
+        <a href="calculadora-salario/index.html" class="site-nav__link">💰 <span>Salário</span></a>
+        <a href="calculadora-13-salario/index.html" class="site-nav__link">🎄 <span>13º Salário</span></a>
     </nav>
 
     <main class="page-main page-main--centered">
         <div class="page-card">  
-            <div class="lang-switch">
-                <button onclick="showLang('pt')" id="btn-pt" class="btn-lang btn-lang--active">PortuguÃªs</button>
-                <button onclick="showLang('en')" id="btn-en" class="btn-lang btn-lang--inactive">English</button>
+            <div class="lang-switch" style="margin-bottom: 20px;">
+                <button onclick="showLang('pt')" id="btn-pt" class="btn-lang btn-lang--active" style="cursor:pointer; padding: 5px 15px; border-radius: 5px; border: none; background: #3483fa; color: white;">Português</button>
+                <button onclick="showLang('en')" id="btn-en" class="btn-lang btn-lang--inactive" style="cursor:pointer; padding: 5px 15px; border-radius: 5px; border: none; background: #eee; color: #666;">English</button>
             </div>
 
             <div id="terms-pt">
-                <h1>Termos e CondiÃ§Ãµes de Uso</h1>
+                <h1>Termos e Condições de Uso</h1>
                 <div>
-                    <p>Ao utilizar o <strong>Simulador de Metas</strong>, vocÃª concorda com os seguintes termos:</p>
-                    <ul>
-                        <li>Os cÃ¡lculos sÃ£o estimativas baseadas em taxas atuais.</li>
-                        <li>NÃ£o fornecemos recomendaÃ§Ãµes de investimento.</li>
+                    <p>Ao utilizar o <strong>Simulador de Metas</strong>, você concorda com os seguintes termos:</p>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Os cálculos apresentados são estimativas baseadas em taxas atuais e podem variar.</li>
+                        <li>O conteúdo deste site não constitui recomendação de investimento ou aconselhamento financeiro oficial.</li>
+                        <li>O uso das informações é de inteira responsabilidade do usuário.</li>
                     </ul>
                 </div>
             </div>
 
-            <div id="terms-en" class="is-hidden">
+            <div id="terms-en" style="display: none;">
                 <h1>Terms and Conditions of Use</h1>
                 <div>
                     <p>By using <strong>Simulador de Metas</strong>, you agree to the following terms:</p>
-                    <ul>
-                        <li>Calculations are estimates based on current rates.</li>
-                        <li>We do not provide investment advice.</li>
+                    <ul style="margin-top: 15px; line-height: 1.6;">
+                        <li>Calculations are estimates based on current rates and may vary.</li>
+                        <li>The content of this site does not constitute investment advice or official financial counseling.</li>
+                        <li>The use of information is the sole responsibility of the user.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="page-back">
-                <a href="./" class="page-back__link">â† <span id="back-text">Voltar ao InÃ­cio</span></a>
+            <div class="page-back" style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+                <a href="./" class="page-back__link" style="text-decoration: none; color: #3483fa; font-weight: bold;">← <span id="back-text">Voltar ao Início</span></a>
             </div>
         </div>
     </main>
 
-   <footer class="site-footer">
-    
-    <div class="footer-disclaimer">
-        <p id="footer-disclaimer">
-            <strong>Aviso:</strong> Os cÃ¡lculos exibidos neste portal sÃ£o estimativas baseadas em taxas vigentes e servem apenas para fins informativos. NÃ£o constituem aconselhamento financeiro oficial ou recomendaÃ§Ã£o de investimento.
+    <footer class="site-footer">
+        <div class="footer-disclaimer">
+            <p>
+                <strong>Aviso:</strong> Os cálculos exibidos neste portal são estimativas baseadas em taxas vigentes e servem apenas para fins informativos.
+            </p>
+        </div>
+
+        <p>&copy; 2026 <strong>Simulador de Metas</strong>. Todos os direitos reservados.</p>
+        
+        <p class="footer-contact">
+            <span>Contato:</span> 
+            <a href="mailto:suporte@simuladormetas.com.br" class="footer-email">suporte@simuladormetas.com.br</a>
         </p>
-    </div>
 
-    <p>&copy; 2026 <strong>Simulador de Metas</strong>. <span id="footer-rights">Todos os direitos reservados.</span></p>
-    
-    <p class="footer-contact">
-        <span id="footer-contact-text">Contato:</span> 
-        <a href="mailto:suporte@simuladormetas.com.br" class="footer-email">suporte@simuladormetas.com.br</a>
-    </p>
-
-    <div class="footer-links">
-        <a href="sobre.html" class="footer-link">Sobre</a> |
-        <a href="contato.html" class="footer-link">Contato</a> |
-        <a href="politica.html" class="footer-link">Privacidade</a> | 
-        <a href="termos.html" class="footer-link">Termos de Uso</a>
-    </div>
-</footer>
+        <div class="footer-links">
+            <a href="sobre.html" class="footer-link">Sobre</a> |
+            <a href="contato.html" class="footer-link">Contato</a> |
+            <a href="politica.html" class="footer-link">Privacidade</a> | 
+            <a href="termos.html" class="footer-link">Termos de Uso</a>
+        </div>
+    </footer>
 
     <script>
         function showLang(lang) {
             document.getElementById('terms-pt').style.display = lang === 'pt' ? 'block' : 'none';
             document.getElementById('terms-en').style.display = lang === 'en' ? 'block' : 'none';
-            document.getElementById('back-text').innerText = lang === 'pt' ? 'Voltar ao InÃ­cio' : 'Back to Home';
-            document.getElementById('btn-pt').style.background = lang === 'pt' ? '#3483fa' : '#eee';
-            document.getElementById('btn-pt').style.color = lang === 'pt' ? 'white' : '#666';
-            document.getElementById('btn-en').style.background = lang === 'en' ? '#3483fa' : '#eee';
-            document.getElementById('btn-en').style.color = lang === 'en' ? 'white' : '#666';
+            document.getElementById('back-text').innerText = lang === 'pt' ? 'Voltar ao Início' : 'Back to Home';
+            
+            const btnPt = document.getElementById('btn-pt');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'pt') {
+                btnPt.style.background = '#3483fa'; btnPt.style.color = 'white';
+                btnEn.style.background = '#eee'; btnEn.style.color = '#666';
+            } else {
+                btnEn.style.background = '#3483fa'; btnEn.style.color = 'white';
+                btnPt.style.background = '#eee'; btnPt.style.color = '#666';
+            }
         }
     </script>
 </body>
 </html>
-
