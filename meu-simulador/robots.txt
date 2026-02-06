@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Permite que o Google veja como o site é construído
+Allow: /js/
+Allow: /css/
+
+# Evita que o Google indexe arquivos de configuração ou rascunhos (opcional)
+Disallow: /README.md
+Disallow: /.git/
+
+Sitemap: https://www.simuladormetas.com.br/sitemap.xml

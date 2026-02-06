@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre NÃ³s | Simulador de Metas</title>
+
+       <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"> 
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background: #f5f5f5; margin: 0; font-family: sans-serif; min-height: 100vh; display: flex; flex-direction: column;">
+
+    <nav style="background: #0f172a; padding: 15px; border-bottom: 1px solid #334155; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="./" style="color: #fff; text-decoration: none; font-weight: bold;">ðŸŽ¯ <span id="nav-home">InÃ­cio</span></a>
+        <a href="calculadora-salario/index.html" style="color: #94a3b8; text-decoration: none; font-weight: bold;">ðŸ’¸ <span id="nav-salary">SalÃ¡rio</span></a>
+        <a href="calculadora-13-salario/index.html" style="color: #94a3b8; text-decoration: none; font-weight: bold;">ðŸŽ„ <span id="nav-13">13Âº SalÃ¡rio</span></a>
+    </nav>
+
+    <main style="flex: 1; padding: 40px 20px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;">
+        <div style="max-width: 800px; width: 100%; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); box-sizing: border-box;">
+            
+            <div style="text-align: right; margin-bottom: 20px;">
+                <button onclick="showLang('pt')" id="btn-pt" style="background: #3483fa; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">PortuguÃªs</button>
+                <button onclick="showLang('en')" id="btn-en" style="background: #eee; color: #666; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">English</button>
+            </div>
+
+            <div id="about-pt">
+                <h1 style="color: #333; font-size: 1.8rem; margin-bottom: 20px;">Sobre o Simulador de Metas</h1>
+                <div style="color: #444; line-height: 1.8; font-size: 1.1rem;">
+                    <p>O <strong>Simulador de Metas</strong> nasceu em 2026 com o objetivo de democratizar o planejamento financeiro. Acreditamos que todos devem ter acesso a ferramentas simples e precisas para calcular sua liberdade financeira.</p>
+                    <p>Nossas calculadoras sÃ£o atualizadas constantemente com as regras fiscais vigentes, garantindo que vocÃª tome as melhores decisÃµes com o seu dinheiro.</p>
+                </div>
+            </div>
+
+            <div id="about-en" style="display: none;">
+                <h1 style="color: #333; font-size: 1.8rem; margin-bottom: 20px;">About Simulador de Metas</h1>
+                <div style="color: #444; line-height: 1.8; font-size: 1.1rem;">
+                    <p><strong>Simulador de Metas</strong> was founded in 2026 with the goal of democratizing financial planning. We believe everyone should have access to simple and accurate tools to calculate their financial freedom.</p>
+                    <p>Our calculators are constantly updated with current tax rules, ensuring you make the best decisions with your money.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+                <a href="./" style="color: #3483fa; text-decoration: none; font-weight: bold;">â† <span id="back-text">Voltar ao InÃ­cio</span></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+    
+    <div style="max-width: 800px; margin: 0 auto 20px auto; line-height: 1.6; color: #64748b;">
+        <p id="footer-disclaimer">
+            <strong>Aviso:</strong> Os cÃ¡lculos exibidos neste portal sÃ£o estimativas baseadas em taxas vigentes e servem apenas para fins informativos. NÃ£o constituem aconselhamento financeiro oficial ou recomendaÃ§Ã£o de investimento.
+        </p>
+    </div>
+
+    <p>&copy; 2026 <strong>Simulador de Metas</strong>. <span id="footer-rights">Todos os direitos reservados.</span></p>
+    
+    <p style="margin: 10px 0;">
+        <span id="footer-contact-text">Contato:</span> 
+        <a href="mailto:suporte@simuladormetas.com.br" style="color: #3483fa; text-decoration: none; font-weight: bold;">suporte@simuladormetas.com.br</a>
+    </p>
+
+    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <a href="sobre.html" style="color: #38bdf8; text-decoration: none;">Sobre</a> |
+        <a href="contato.html" style="color: #38bdf8; text-decoration: none;">Contato</a> |
+        <a href="politica.html" style="color: #38bdf8; text-decoration: none;">Privacidade</a> | 
+        <a href="termos.html" style="color: #38bdf8; text-decoration: none;">Termos de Uso</a>
+    </div>
+</footer>
+
+    <script>
+        function showLang(lang) {
+            document.getElementById('about-pt').style.display = lang === 'pt' ? 'block' : 'none';
+            document.getElementById('about-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('back-text').innerText = lang === 'pt' ? 'Voltar ao InÃ­cio' : 'Back to Home';
+            document.getElementById('btn-pt').style.background = lang === 'pt' ? '#3483fa' : '#eee';
+            document.getElementById('btn-pt').style.color = lang === 'pt' ? 'white' : '#666';
+            document.getElementById('btn-en').style.background = lang === 'en' ? '#3483fa' : '#eee';
+            document.getElementById('btn-en').style.color = lang === 'en' ? 'white' : '#666';
+        }
+    </script>
+</body>
+</html>
