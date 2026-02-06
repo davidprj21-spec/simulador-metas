@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -12,52 +12,112 @@
       gtag('js', new Date());
       gtag('config', 'G-7XQFCHW24T');
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title>Contato | Simulador de Metas Financeiras</title>
-    <meta name="description" content="Entre em contato com a equipe do Simulador de Metas. Tire suas dúvidas ou envie sugestões sobre nossa calculadora financeira.">
+    <title>Simulador de Metas Financeiras 2026 | Calculadora Gratuita</title>
+    <meta name="description" content="Simulador de Metas 2026: Calcule juros compostos com taxas Selic e CDI em tempo real. Descubra como ganhar mais de R$ 30 mil em juros e planeje sua liberdade financeira.">
+    <meta name="keywords" content="simulador de metas, calculadora financeira, juros compostos, taxa selic hoje, rendimento cdi, planejamento financeiro">
     
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="canonical" href="https://simuladormetas.com.br/contato.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Simulador de Metas Financeiras 2026 🎯">
+    <meta property="og:description" content="Planeje sua liberdade financeira. Calcule juros compostos e rendimentos em tempo real.">
+    <meta property="og:url" content="https://simuladormetas.com.br/">
+    <meta property="og:site_name" content="Simulador de Metas">
+    <meta property="og:image" content="https://simuladormetas.com.br/img/og-image.jpg">
+
+    <link rel="canonical" href="https://simuladormetas.com.br/">
 </head>
-<body class="page-light">
+<body class="page-home">
         
-    <nav class="site-nav">
-        <a href="./" class="site-nav__link">🎯 Metas</a>
-        <a href="calculadora-salario/index.html" class="site-nav__link">💰 Salário</a>
+    <nav class="site-nav site-nav--sticky">
+        <a href="./" class="site-nav__link site-nav__link--active site-nav__link--accent-blue">🎯 Metas</a>
+        <a href="calculadora-salario/index.html" class="site-nav__link">💰 Salário Líquido</a>
         <a href="calculadora-13-salario/index.html" class="site-nav__link">🎄 13º Salário</a>
     </nav>     
 
-    <main class="page-main page-main--centered">
-        <div class="page-card page-card--narrow page-card--centered">
-            
-            <div id="contact-content">
-                <h1>Fale Conosco</h1>
-                <p class="page-lead">Tem alguma dúvida, crítica ou sugestão? Nossa equipe está pronta para te ouvir.</p>
-                
-                <div class="contact-box" style="margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px; border: 1px solid #ddd;">
-                    <p style="margin-bottom: 5px; color: #666; font-size: 0.9rem;">E-mail oficial de suporte:</p>
-                    <p class="contact-email" style="font-weight: bold; font-size: 1.2rem; color: #3483fa;">suporte@simuladormetas.com.br</p>
-                </div>
+    <main class="container page-main">
+        <header class="cabecalho">
+            <h1 id="main-title">🎯 Simulador de Metas</h1>
+            <p class="subtitulo" id="main-subtitle">Transforme seus planos financeiros em realidade</p>
+        </header>
 
-                <p>Respondemos em até 48 horas úteis.</p>
+        <div class="market-ticker">
+            <div class="ticker-item">
+                <span class="ticker-label" id="label-selic">Selic:</span>
+                <span class="ticker-value" id="taxa-selic">...</span>
             </div>
-
-            <div class="page-back" style="margin-top: 40px;">
-                <a href="./" class="page-back__link" style="text-decoration: none; color: #3483fa; font-weight: bold;">← Voltar ao Simulador</a>
+            <div class="ticker-divider">|</div>
+            <div class="ticker-item">
+                <span class="ticker-label" id="label-cdi">CDI:</span> 
+                <span class="ticker-value" id="taxa-cdi">...</span>
+            </div>
+            <div class="ticker-divider">|</div>
+            <div class="ticker-item">
+                <span class="ticker-label" id="label-ipca">IPCA:</span>
+                <span class="ticker-value" id="taxa-ipca">...</span>
+            </div>
+            <div class="ticker-divider">|</div>
+            <div class="ticker-item">
+                <span class="ticker-label" id="label-dolar">Dólar:</span>
+                <span class="ticker-value ticker-value--green" id="taxa-dolar">...</span> 
+            </div>
+            <div class="ticker-divider">|</div>
+            <div class="ticker-item">
+                <span class="ticker-label" id="label-fed">FED (EUA):</span>
+                <span class="ticker-value ticker-value--amber" id="taxa-fed">5.33%</span> 
             </div>
         </div>
+
+        <section id="calculadora" aria-label="Calculadora Financeira">
+            <label for="capital" id="lbl-capital">Patrimônio Inicial (Quanto você já tem)</label>
+            <input type="tel" id="capital" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+            
+            <label for="meta" id="lbl-meta">Objetivo Final (Sua Meta)</label>
+            <input type="tel" id="meta" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+
+            <label for="mensal" id="lbl-mensal">Aporte Mensal (Quanto vai guardar por mês)</label>
+            <input type="tel" id="mensal" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+
+            <button id="btn-calcular" onclick="calcular()">Projetar Meu Futuro 🚀</button>
+
+            <div id="container-grafico" class="chart-card is-hidden">
+                <canvas id="meuGraficoMetas"></canvas>
+            </div>
+
+            <div id="resultado" role="status" aria-live="polite" aria-atomic="true"></div>
+            <button id="btn-whatsapp" class="btn-whatsapp is-hidden" onclick="compartilharWhatsApp()">
+                 Compartilhar no WhatsApp 📱
+            </button>
+        </section>
+
+        <article class="artigo-seo artigo-seo--home">
+            <div id="texto-br">
+                <h2 class="titulo-artigo">Como criar um Planejamento Estratégico Financeiro</h2>
+                <p class="texto-artigo">Estabelecer um objetivo financeiro claro é o primeiro passo para a construção de um patrimônio sólido.</p>
+                <h3 class="subtitulo-artigo">4 Pilares para Atingir suas Metas:</h3>
+                <ul class="lista-beneficios seo-list">
+                    <li><strong>💰 Disciplina nos Aportes:</strong> A regularidade é mais poderosa que a quantia inicial.</li>
+                    <li><strong>📊 Gestão de Despesas:</strong> Otimizar gastos aumenta sua "sobra" mensal.</li>
+                </ul>
+            </div>
+        </article>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--dark">
         <div class="footer-disclaimer">
-            <p>
-                <strong>Aviso:</strong> Este canal é exclusivo para suporte técnico e sugestões sobre a plataforma.
+            <p id="footer-disclaimer">
+                <strong>Aviso:</strong> Os cálculos exibidos neste portal são estimativas baseadas em taxas vigentes e servem apenas para fins informativos.
             </p>
         </div>
-        <p>&copy; 2026 <strong>Simulador de Metas</strong>. Todos os direitos reservados.</p>
+        <p>&copy; 2026 <strong>Simulador de Metas</strong>. <span id="footer-rights">Todos os direitos reservados.</span></p>
+        <p class="footer-contact">
+            <span id="footer-contact-text">Contato:</span> 
+            <a href="mailto:suporte@simuladormetas.com.br" class="footer-email">suporte@simuladormetas.com.br</a>
+        </p>
         <div class="footer-links">
             <a href="sobre.html" class="footer-link">Sobre</a> |
             <a href="contato.html" class="footer-link">Contato</a> |
@@ -66,5 +126,30 @@
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
+    <script>
+        async function carregarTaxas() {
+            try {
+                const response = await fetch('https://brasilapi.com.br/api/taxas/v1');
+                const dados = await response.json();
+                const selic = dados.find(t => t.nome === 'Selic');
+                const cdi = dados.find(t => t.nome === 'CDI');
+                const ipca = dados.find(t => t.nome === 'IPCA');
+
+                if (selic) document.getElementById('taxa-selic').innerText = (selic.valor).toFixed(2) + '%';
+                if (cdi) document.getElementById('taxa-cdi').innerText = (cdi.valor).toFixed(2) + '%';
+                if (ipca) document.getElementById('taxa-ipca').innerText = (ipca.valor).toFixed(2) + '%';
+
+                const responseDolar = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL');
+                const dadosDolar = await responseDolar.json();
+                const valorDolar = parseFloat(dadosDolar.USDBRL.bid).toFixed(2);
+                
+                document.getElementById('taxa-dolar').innerText = 'R$ ' + valorDolar.replace('.', ',');
+            } catch (error) {
+                console.log("Erro ao carregar taxas", error);
+            }
+        }
+        window.addEventListener('load', carregarTaxas);
+    </script>
 </body>
 </html>
