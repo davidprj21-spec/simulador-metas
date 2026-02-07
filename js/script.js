@@ -1,4 +1,4 @@
-﻿// 1. ConfiguraÃ§Ãµes de InternacionalizaÃ§Ã£o
+// 1. ConfiguraÃ§Ãµes de InternacionalizaÃ§Ã£o
 const isInternational = !navigator.language.startsWith('pt');
 const moedaSimbolo = isInternational ? '$' : 'R$';
 const localeSet = isInternational ? 'en-US' : 'pt-BR';
