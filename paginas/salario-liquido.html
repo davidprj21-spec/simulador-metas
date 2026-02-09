@@ -1,0 +1,85 @@
+<header class="cabecalho">
+    <h1 id="calc-title"> Calculadora de Salário Líquido</h1>
+    <p id="calc-subtitle" class="subtitulo">Saiba exatamente quanto você vai receber após os descontos</p>
+</header>
+
+<section id="calc-salario" class="calculadora-box">
+    <label for="salario-bruto" id="lbl-bruto">Salário Bruto (Mensal)</label>
+    <input type="tel" id="salario-bruto" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+    
+    <label for="dependentes" id="lbl-dependentes" class="label-inline">
+        Número de Dependentes 
+        <span title="Pessoas que dependem de você (filhos, cônjuge, etc). Isso reduz o valor do seu Imposto de Renda." class="help-badge" style="cursor:help; background:#eee; padding:2px 7px; border-radius:50%; font-size:0.8rem;">?</span>
+    </label>
+    <input type="number" id="dependentes" value="0" min="0" class="input--alt">
+
+    <div class="btn-row" style="display: flex; gap: 10px; margin-top: 20px;">
+        <button id="btn-calc-salario" class="btn-success btn-grow-3" onclick="calcularSalario()" style="flex: 3; cursor: pointer;">Calcular Salário</button>
+        <button class="btn-secondary btn-grow-1" onclick="limparCampos()" style="flex: 1; cursor: pointer;">Limpar</button>
+    </div>
+    
+    <div id="resultado-salario" role="status" aria-live="polite" aria-atomic="true" style="margin-top: 20px;"></div>
+    
+    <button id="btn-whatsapp" class="btn-whatsapp is-hidden" onclick="compartilharWhatsApp()" style="margin-top: 15px;">
+        Compartilhar no WhatsApp
+    </button>
+</section>
+
+<header class="cabecalho">
+    <h1 id="calc-title"> Calculadora de Salário Líquido 2026</h1>
+    <p id="calc-subtitle" class="subtitulo">Entenda seus rendimentos e planeje seu orçamento com precisão</p>
+</header>
+
+<section id="calc-salario" class="calculadora-box">
+    </section>
+
+<article class="artigo-seo">
+    <h2>Além do Contracheque: O que você realmente precisa saber</h2>
+    <p>
+        Muitos trabalhadores focam apenas no <strong>salário bruto</strong> na hora de aceitar uma proposta de emprego, mas o que sustenta o seu estilo de vida é o <strong>salário líquido</strong>. Em 2026, com as atualizações nas tabelas progressivas, entender a "mordida" do governo é o primeiro passo para um planejamento financeiro à prova de falhas.
+    </p>
+
+    <h3>Os "Vilões" do seu Salário: Entenda os Descontos</h3>
+    <p>
+        Quando você olha seu holerite, dois nomes aparecem com frequência: <strong>INSS</strong> e <strong>IRRF</strong>. Mas você sabe o que eles significam para o seu futuro?
+    </p>
+    
+    <ul class="seo-list">
+        <li>
+             <strong>INSS (Previdência Social):</strong> 
+            Não é apenas um imposto, é o seu seguro. Ele garante sua aposentadoria, auxílio-doença e pensão. O desconto é progressivo: quem ganha mais, contribui com uma alíquota maior.
+        </li>
+        <li>
+             <strong>IRRF (Imposto de Renda Retido na Fonte):</strong> 
+            Este é o imposto sobre o que você ganha. A boa notícia é que o uso de <strong>dependentes</strong> (filhos, pais ou cônjuge) ajuda a reduzir a base de cálculo, fazendo com que mais dinheiro fique no seu bolso.
+        </li>
+    </ul>
+
+    
+
+    <h3>A Importância dos Dependentes no Cálculo</h3>
+    <p>
+        Cada dependente legal informado na nossa calculadora gera uma dedução fixa mensal na base de cálculo do Imposto de Renda. Se você tem filhos ou dependentes legais, nunca esqueça de incluí-los na simulação, pois isso pode aumentar seu salário líquido em centenas de reais ao longo do ano.
+    </p>
+
+    <h3>3 Dicas para Organizar seu Dinheiro após o Cálculo:</h3>
+    <ul class="seo-list">
+        <li>
+             <strong>A Regra dos 50-30-20:</strong> 
+            Use seu salário líquido para dividir seus gastos: 50% para necessidades básicas, 30% para estilo de vida e 20% para investimentos e metas (use nosso <a href="javascript:void(0)" onclick="carregarPagina('home')">Simulador de Metas</a> para isso!).
+        </li>
+        <li>
+             <strong>Projete o Ano Todo:</strong> 
+            Sabendo seu líquido mensal, multiplique por 12 e some o 13º. Isso te dá o seu "poder de fogo" anual para grandes compras ou viagens.
+        </li>
+        <li>
+             <strong>Cuidado com os Descontos Opcionais:</strong> 
+            Vale-transporte, plano de saúde e previdência privada da empresa também saem do seu bolso. Sempre verifique se o benefício vale o custo-benefício para sua realidade atual.
+        </li>
+    </ul>
+
+    <h3>Por que usar nossa calculadora em 2026?</h3>
+    <p>
+        As tabelas de impostos mudam. Nossa ferramenta é atualizada com as regras fiscais vigentes em 2026, garantindo que o valor que você vê na tela seja o mais próximo possível do que cairá na sua conta bancária no quinto dia útil.
+    </p>
+</article>

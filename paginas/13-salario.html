@@ -1,0 +1,72 @@
+<header class="cabecalho">
+    <h1> Calculadora de 13º Salário 2026</h1>
+    <p class="subtitulo">Planeje o uso da sua gratificação natalina com precisão total</p>
+</header>
+
+<section class="calculadora-box">
+    <label for="salario-bruto-13">Salário Bruto Mensal</label>
+    <input type="tel" id="salario-bruto-13" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+    
+    <label for="meses-trabalhados" class="label-spaced">Meses Trabalhados no Ano</label>
+    <input type="number" id="meses-trabalhados" value="12" min="1" max="12" class="input--alt">
+
+    <div class="btn-row" style="display: flex; gap: 10px; margin-top: 20px;">
+        <button class="btn-warning btn-grow-3" onclick="calcular13()" style="flex: 3; cursor: pointer; background-color: #f1c40f; color: #000; border: none; padding: 10px; border-radius: 5px; font-weight: bold;">Calcular 13º</button>
+        <button class="btn-secondary btn-grow-1" onclick="limpar13()" style="flex: 1; cursor: pointer; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">Limpar</button>
+    </div>
+    
+    <div id="resultado-13" role="status" aria-live="polite" aria-atomic="true" style="margin-top: 20px;"></div>
+    
+    <button id="btn-whatsapp" class="btn-whatsapp is-hidden" onclick="compartilharWhatsApp()" style="margin-top: 15px;">
+        Compartilhar no WhatsApp 
+    </button>
+</section>
+
+<article class="artigo-seo">
+    <h2>Guia do 13º Salário: Entenda Seus Direitos em 2026</h2>
+    <p>
+        O <strong>Décimo Terceiro Salário</strong>, oficialmente conhecido como Gratificação Natalina, é o momento mais aguardado do ano para milhões de brasileiros. No entanto, muitos se surpreendem com o valor final devido aos descontos que ocorrem especificamente na segunda parcela. Nossa calculadora ajuda você a visualizar o valor líquido real para não comprometer seu orçamento.
+    </p>
+
+    <h3>Como funciona o parcelamento do 13º?</h3>
+    <p>
+        A lei brasileira determina que o pagamento seja dividido em duas etapas, com regras bem diferentes entre elas:
+    </p>
+    
+    <ul class="seo-list">
+        <li>
+            <strong>1ª Parcela (Adiantamento):</strong> 
+            Deve ser paga entre 1º de fevereiro e 30 de novembro. Ela corresponde a exatamente 50% do seu salário bruto, <strong>sem qualquer desconto</strong> de INSS ou IRRF. É o valor "cheio".
+        </li>
+        <li>
+            <strong>2ª Parcela (Quitação):</strong> 
+            Paga até o dia 20 de dezembro. É aqui que o bicho pega: os descontos de INSS e Imposto de Renda incidem sobre o valor <strong>total</strong> do 13º e são subtraídos integralmente desta parcela. Por isso, a segunda parcela é sempre menor que a primeira.
+        </li>
+    </ul>
+
+    <h3>O que define o valor que você recebe?</h3>
+    <p>
+        O cálculo é proporcional. Se você trabalhou os 12 meses do ano na mesma empresa, recebe o valor integral (um salário extra). Se trabalhou menos, o cálculo é feito sobre a quantidade de meses trabalhados (considerando como mês cheio sempre que trabalhar 15 dias ou mais dentro do mesmo mês).
+    </p>
+
+    <h3>3 Estratégias Inteligentes para o seu 13º Salário:</h3>
+    <ul class="seo-list">
+        <li>
+            <strong>Acelere sua Meta:</strong> 
+            Este é o momento ideal para dar um "salto" nos seus investimentos. Use uma parte do 13º no nosso <a href="javascript:void(0)" onclick="carregarPagina('home')">Simulador de Metas</a> e veja como esse aporte extra reduz meses (ou anos) de espera.
+        </li>
+        <li>
+            <strong>Limpe suas Dívidas:</strong> 
+            Se você tem dívidas com juros altos (cartão de crédito ou cheque especial), priorize a quitação. O "lucro" de parar de pagar juros é o melhor investimento que você pode fazer.
+        </li>
+        <li>
+            <strong>Programe o Janeiro Negro:</strong> 
+            Lembre-se que janeiro chega com IPVA, IPTU e matrícula escolar. Reservar uma parte do 13º agora evita o sufoco no início do próximo ano.
+        </li>
+    </ul>
+
+    <h3>Por que simular antes de receber?</h3>
+    <p>
+        Saber o valor exato ajuda você a negociar compras à vista com desconto ou decidir se vale a pena antecipar o 13º no banco (cuidado com as taxas!). Nossa ferramenta está atualizada com as alíquotas de 2026 para que você tenha o controle total do seu dinheiro.
+    </p>
+</article>

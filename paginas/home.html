@@ -1,0 +1,87 @@
+<header class="cabecalho">
+    <h1 id="main-title">Simulador de Metas</h1>
+    <p class="subtitulo" id="main-subtitle">Transforme seus planos financeiros em realidade</p>
+</header>
+
+<div class="market-ticker">
+    <div class="ticker-item">
+        <span class="ticker-label" id="label-selic">Selic:</span>
+        <span class="ticker-value" id="taxa-selic">...</span>
+    </div>
+    <div class="ticker-divider">|</div>
+    <div class="ticker-item">
+        <span class="ticker-label" id="label-cdi">CDI:</span> 
+        <span class="ticker-value" id="taxa-cdi">...</span>
+    </div>
+    <div class="ticker-divider">|</div>
+    <div class="ticker-item">
+        <span class="ticker-label" id="label-ipca">IPCA:</span>
+        <span class="ticker-value" id="taxa-ipca">...</span>
+    </div>
+    <div class="ticker-divider">|</div>
+    <div class="ticker-item">
+        <span class="ticker-label" id="label-dolar">Dólar:</span>
+        <span class="ticker-value ticker-value--green" id="taxa-dolar">...</span> 
+    </div>
+</div>
+
+<section id="calculadora" aria-label="Calculadora Financeira">
+    <label for="capital" id="lbl-capital">Patrimônio Inicial (Quanto você já tem)</label>
+    <input type="tel" id="capital" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+    
+    <label for="meta" id="lbl-meta">Objetivo Final (Sua Meta)</label>
+    <input type="tel" id="meta" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+
+    <label for="mensal" id="lbl-mensal">Aporte Mensal (Quanto vai guardar por mês)</label>
+    <input type="tel" id="mensal" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+
+    <button id="btn-calcular" onclick="calcular()">Projetar Meu Futuro</button>
+
+    <div id="container-grafico" class="chart-card is-hidden">
+        <canvas id="meuGraficoMetas"></canvas>
+    </div>
+
+    <div id="resultado" role="status" aria-live="polite" aria-atomic="true"></div>
+    
+    <button id="btn-whatsapp" class="btn-whatsapp is-hidden" onclick="compartilharWhatsApp()">
+         Compartilhar no WhatsApp 
+    </button>
+</section>
+
+<article class="artigo-seo">
+    <h2>Guia Definitivo: Como Dominar seu Planejamento Financeiro em 2026</h2>
+    <p>
+        Ter uma meta financeira não é apenas sobre "guardar dinheiro", é sobre comprar sua liberdade futura. No cenário econômico de 2026, com taxas Selic e inflação oscilando, quem não utiliza um <strong>simulador de metas</strong> profissional acaba perdendo poder de compra para o tempo.
+    </p>
+
+    <h3>O Poder dos Juros Compostos: A "Oitava Maravilha do Mundo"</h3>
+    <p>
+        Como dizia Albert Einstein, os juros compostos são a maior força do universo. Quando você projeta sua meta acima, nosso sistema calcula o reinvestimento dos seus lucros mês a mês. 
+        <strong>Um exemplo real:</strong> Se você começar com R$ 5.000,00 e aportar R$ 500,00 mensais a uma taxa de 1% ao mês, em 10 anos você não terá apenas guardado o seu dinheiro, você terá gerado uma "máquina de renda" que trabalha enquanto você dorme.
+    </p>
+
+    <h3>4 Pilares Inegociáveis para Atingir sua Liberdade:</h3>
+    <ul class="seo-list">
+        <li>
+             <strong>Disciplina nos Aportes:</strong> 
+            A regularidade é mais poderosa que a quantia inicial. O investidor que aporta pouco todo mês vence o investidor que aporta muito apenas uma vez por ano.
+        </li>
+        <li>
+             <strong>Gestão Estratégica de Despesas:</strong> 
+            Não se trata de cortar o cafézinho, mas de otimizar gastos fixos. Cada R$ 100,00 que você economiza hoje e investe, pode se transformar em R$ 1.000,00 no futuro.
+        </li>
+        <li>
+             <strong>Diversificação de Ativos:</strong> 
+            Nunca coloque todos os ovos na mesma cesta. Use nossa calculadora para simular diferentes cenários de rentabilidade e veja como 1% de diferença na taxa pode mudar sua vida em 10 anos.
+        </li>
+        <li>
+             <strong>Reserva de Emergência:</strong> 
+            Antes de focar na meta final, garanta 6 meses de custo de vida. Isso impede que você precise resgatar seus investimentos em momentos de baixa do mercado.
+        </li>
+    </ul>
+
+    <h3>Por que usar nosso Simulador em vez de uma planilha?</h3>
+    <p>
+        Nossa ferramenta utiliza dados em tempo real (Selic, CDI e IPCA) para garantir que sua projeção seja a mais fiel possível à realidade de 2026. Planilhas estáticas ficam obsoletas em semanas; nosso simulador evolui com o mercado.
+    </p>
+</article>

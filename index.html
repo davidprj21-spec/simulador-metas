@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Simulador de Metas Financeiras 2026 🎯">
+    <meta property="og:title" content="Simulador de Metas Financeiras 2026">
     <meta property="og:description" content="Planeje sua liberdade financeira. Calcule juros compostos e rendimentos em tempo real.">
     <meta property="og:url" content="https://simuladormetas.com.br/">
     <meta property="og:site_name" content="Simulador de Metas">
@@ -33,98 +33,17 @@
 </head>
 <body class="page-home">
         
-    <nav class="site-nav site-nav--sticky">
-        <a href="./" class="site-nav__link site-nav__link--active site-nav__link--accent-blue">🎯 Metas</a>
-        <a href="calculadora-salario/index.html" class="site-nav__link">💰 Salário Líquido</a>
-        <a href="calculadora-13-salario/index.html" class="site-nav__link">🎄 13º Salário</a>
-    </nav>     
+    <div id="universal-header"></div>
 
-    <main class="container page-main">
-        <header class="cabecalho">
-            <h1 id="main-title">🎯 Simulador de Metas</h1>
-            <p class="subtitulo" id="main-subtitle">Transforme seus planos financeiros em realidade</p>
-        </header>
-
-        <div class="market-ticker">
-            <div class="ticker-item">
-                <span class="ticker-label" id="label-selic">Selic:</span>
-                <span class="ticker-value" id="taxa-selic">...</span>
+        
+      <main class="container page-main">
+            <div id="conteudo-dinamico">
             </div>
-            <div class="ticker-divider">|</div>
-            <div class="ticker-item">
-                <span class="ticker-label" id="label-cdi">CDI:</span> 
-                <span class="ticker-value" id="taxa-cdi">...</span>
-            </div>
-            <div class="ticker-divider">|</div>
-            <div class="ticker-item">
-                <span class="ticker-label" id="label-ipca">IPCA:</span>
-                <span class="ticker-value" id="taxa-ipca">...</span>
-            </div>
-            <div class="ticker-divider">|</div>
-            <div class="ticker-item">
-                <span class="ticker-label" id="label-dolar">Dólar:</span>
-                <span class="ticker-value ticker-value--green" id="taxa-dolar">...</span> 
-            </div>
-            <div class="ticker-divider">|</div>
-            <div class="ticker-item">
-                <span class="ticker-label" id="label-fed">FED (EUA):</span>
-                <span class="ticker-value ticker-value--amber" id="taxa-fed">5.33%</span> 
-            </div>
-        </div>
+      </main>
 
-        <section id="calculadora" aria-label="Calculadora Financeira">
-            <label for="capital" id="lbl-capital">Patrimônio Inicial (Quanto você já tem)</label>
-            <input type="tel" id="capital" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
-            
-            <label for="meta" id="lbl-meta">Objetivo Final (Sua Meta)</label>
-            <input type="tel" id="meta" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
+   
 
-            <label for="mensal" id="lbl-mensal">Aporte Mensal (Quanto vai guardar por mês)</label>
-            <input type="tel" id="mensal" placeholder="R$ 0,00" oninput="formatarMoeda(this)" inputmode="decimal">
-
-            <button id="btn-calcular" onclick="calcular()">Projetar Meu Futuro 🚀</button>
-
-            <div id="container-grafico" class="chart-card is-hidden">
-                <canvas id="meuGraficoMetas"></canvas>
-            </div>
-
-            <div id="resultado" role="status" aria-live="polite" aria-atomic="true"></div>
-            <button id="btn-whatsapp" class="btn-whatsapp is-hidden" onclick="compartilharWhatsApp()">
-                 Compartilhar no WhatsApp 📱
-            </button>
-        </section>
-
-        <article class="artigo-seo artigo-seo--home">
-            <div id="texto-br">
-                <h2 class="titulo-artigo">Como criar um Planejamento Estratégico Financeiro</h2>
-                <p class="texto-artigo">Estabelecer um objetivo financeiro claro é o primeiro passo para a construção de um patrimônio sólido.</p>
-                <h3 class="subtitulo-artigo">4 Pilares para Atingir suas Metas:</h3>
-                <ul class="lista-beneficios seo-list">
-                    <li><strong>💰 Disciplina nos Aportes:</strong> A regularidade é mais poderosa que a quantia inicial.</li>
-                    <li><strong>📊 Gestão de Despesas:</strong> Otimizar gastos aumenta sua "sobra" mensal.</li>
-                </ul>
-            </div>
-        </article>
-    </main>
-
-    <footer class="site-footer site-footer--dark">
-        <div class="footer-disclaimer">
-            <p id="footer-disclaimer">
-                <strong>Aviso:</strong> Os cálculos exibidos neste portal são estimativas baseadas em taxas vigentes e servem apenas para fins informativos.
-            </p>
-        </div>
-        <p>&copy; 2026 <strong>Simulador de Metas</strong>. <span id="footer-rights">Todos os direitos reservados.</span></p>
-        <p class="footer-contact">
-            <span id="footer-contact-text">Contato:</span> 
-            <a href="mailto:suporte@simuladormetas.com.br" class="footer-email">suporte@simuladormetas.com.br</a>
-        </p>
-        <div class="footer-links">
-            <a href="sobre.html" class="footer-link">Sobre</a> |
-            <a href="contato.html" class="footer-link">Contato</a> |
-            <a href="politica.html" class="footer-link">Privacidade</a> | 
-            <a href="termos.html" class="footer-link">Termos de Uso</a>
-        </div>
-    </footer>
+    <div id="universal-footer"></div>
 
     <script src="js/script.js"></script>
     <script>
@@ -151,5 +70,6 @@
         }
         window.addEventListener('load', carregarTaxas);
     </script>
+    <script src="js/components.js"></script>
 </body>
 </html>

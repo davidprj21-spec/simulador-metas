@@ -1,6 +1,6 @@
-/* =========================================
-   RESET E VARIÃVEIS GERAIS
-   ========================================= */
+/* ============================================================
+   1. RESET E VARIÁVEIS GERAIS (ESTILO DARK FIXO)
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -9,24 +9,54 @@
 }
 
 body {
-    background-color: #0f172a; /* Fundo Azul Escuro */
-    color: #f1f5f9; /* Texto Claro */
+    background-color: #0f172a !important; /* Azul Escuro em todas as páginas */
+    color: #f1f5f9 !important;            /* Texto claro sempre */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding: 20px;
+    padding: 0;
 }
 
 .container {
     max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
+    margin: 20px auto;
+    width: 92%;
     flex: 1;
 }
 
-/* =========================================
-   CABEÃ‡ALHO
-   ========================================= */
+/* ============================================================
+   2. NAVEGAÇÃO E MENU (HEADER UNIVERSAL)
+   ============================================================ */
+.site-nav {
+    background: #1e293b;
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-nav__link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.site-nav__link:hover, .site-nav__link--active {
+    color: #38bdf8;
+    border-bottom-color: #38bdf8;
+}
+
+/* ============================================================
+   3. CABEÇALHO E COTAÇÕES (MARKET TICKER)
+   ============================================================ */
 .cabecalho {
     text-align: center;
     margin-bottom: 30px;
@@ -34,19 +64,11 @@ body {
 }
 
 .cabecalho h1 {
-    font-size: 2rem;
-    color: #f8fafc;
+    font-size: 2.2rem;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
-.subtitulo {
-    color: #94a3b8;
-    font-size: 1rem;
-}
-
-/* =========================================
-   BARRA DE COTAÃ‡Ã•ES (CorreÃ§Ã£o aqui!)
-   ========================================= */
 .market-ticker {
     display: flex;
     justify-content: center;
@@ -56,45 +78,46 @@ body {
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 30px;
-    font-size: 0.9rem;
-    color: #94a3b8;
     gap: 15px;
-    flex-wrap: wrap; /* Permite quebrar linha organizado no celular */
+    flex-wrap: wrap;
 }
 
 .ticker-item {
     display: flex;
     gap: 5px;
-    align-items: center;
-    white-space: nowrap; /* IMPEDE QUEBRA DO TEXTO DENTRO DO ITEM */
+    font-size: 0.9rem;
+    color: #94a3b8;
+    white-space: nowrap;
 }
 
-.ticker-value {
-    color: #38bdf8; /* Azul Neon */
-    font-weight: bold;
-}
+.ticker-value { color: #38bdf8; font-weight: bold; }
+.ticker-value--green { color: #4ade80; }
+.ticker-value--amber { color: #fbbf24; }
+.ticker-divider { color: #475569; }
 
-.ticker-divider {
-    color: #475569;
-}
-
-/* =========================================
-   CALCULADORA
-   ========================================= */
-#calculadora,
-.calculadora-box {
-    background-color: #1e293b;
-    padding: 32px;
+/* ============================================================
+   4. CALCULADORAS E CARDS (BLOCOS DE CONTEÚDO)
+   ============================================================ */
+#calculadora, .calculadora-box, .page-card, .artigo-seo {
+    background-color: #1e293b !important;
+    padding: 30px;
     border-radius: 18px;
-    border: 1px solid #334155;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #334155 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+/* Força cores claras em textos dentro de cards brancos antigos */
+.page-card h1, .page-card h2, .page-card p, .page-card li, .page-card ul {
+    color: #f1f5f9 !important;
+    text-align: left;
 }
 
 label {
     display: block;
     margin-bottom: 8px;
-    color: #cbd5e1;
-    font-weight: 500;
+    color: #38bdf8 !important;
+    font-weight: bold;
 }
 
 input {
@@ -109,10 +132,11 @@ input {
     outline: none;
 }
 
-input:focus {
-    border-color: #38bdf8;
-}
+input:focus { border-color: #38bdf8; }
 
+/* ============================================================
+   5. BOTÕES COLORIDOS
+   ============================================================ */
 button {
     width: 100%;
     padding: 16px;
@@ -123,556 +147,265 @@ button {
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.1s;
-}
-
-button:hover {
-    background-color: #0284c7;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-#resultado {
-    margin-top: 25px;
-    text-align: center;
-    font-size: 1.1rem;
-    color: #e2e8f0;
-}
-
-/* =========================================
-   TEXTOS SEO
-   ========================================= */
-.titulo-artigo {
-    color: #38bdf8;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-.subtitulo-artigo {
-    color: #e2e8f0;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
-
-.texto-artigo {
-    margin-bottom: 15px;
-    line-height: 1.7;
-    color: #94a3b8;
-}
-
-.lista-beneficios li {
-    margin-bottom: 8px;
-}
-
-strong {
-    color: #e2e8f0;
-}
-
-/* =========================================
-   RESPONSIVO (CELULAR)
-   ========================================= */
-@media (max-width: 480px) {
-    .market-ticker {
-        gap: 10px;
-        font-size: 0.8rem;
-    }
-    
-    .ticker-divider { display: none; } /* Some as barras | no celular */
-    
-    .ticker-item {
-        background: #0f172a;
-        padding: 6px 10px;
-        border-radius: 4px;
-        width: 48%; /* 2 por linha no celular */
-        justify-content: center;
-    }
-}
-/* FOOTER */
-.site-footer {
-    text-align: center;
-    color: #94a3b8;
-    font-size: 13px;
-    padding: 40px 20px;
-    border-top: 1px solid #ddd;
-    background: #fff;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.site-footer--dark {
-    border-top-color: #334155;
-    background: #0f172a;
-}
-
-
-/* LAYOUT & NAV */
-.page-home .cabecalho h1 {
-    font-size: 2.35rem;
-    letter-spacing: -0.02em;
-}
-
-.page-home .subtitulo {
-    line-height: 1.6;
-    max-width: 520px;
-    margin: 0 auto;
-}
-
-.page-home #calculadora {
-    padding: 34px;
-}
-
-.page-light {
-    background-color: #f5f5f5;
-    color: #0f172a;
-}
-
-.page-main {
-    flex: 1;
-}
-
-.page-main--centered {
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+    gap: 8px;
 }
 
-.site-nav {
-    background: #0f172a;
-    padding: 15px;
+button:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+.btn-secondary { background: #334155; color: #94a3b8; }
+.btn-success { background: #4ade80; color: #000; }
+.btn-warning { background: #fbbf24; color: #000; }
+.btn-whatsapp { background: #25d366; color: #fff; margin-top: 15px; }
+
+/* ============================================================
+   6. BLOG E LISTAGENS
+   ============================================================ */
+.blog-list { list-style: none; padding: 0; }
+
+.blog-item {
+    padding: 20px;
     border-bottom: 1px solid #334155;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.blog-item:hover { background: #1e293b; border-radius: 8px; }
+.blog-item h2 { color: #38bdf8 !important; margin-bottom: 8px; }
+.blog-link { color: #38bdf8; font-weight: bold; text-decoration: none; }
+
+/* ============================================================
+   7. RODAPÉ (FOOTER UNIVERSAL) - CORRIGIDO
+   ============================================================ */
+.site-footer {
+    background-color: #0f172a !important; /* Fundo escuro fixo */
+    color: #94a3b8 !important;
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #334155;
+    margin-top: auto;
+    width: 100%;
+}
+
+.site-footer strong { color: #ffffff !important; }
+
+.footer-links {
+    margin: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
-.site-nav--sticky {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+.footer-link { color: #38bdf8 !important; text-decoration: none; }
+.footer-email { color: #38bdf8; font-weight: bold; text-decoration: none; }
 
-.site-nav__link {
-    color: #94a3b8;
-    text-decoration: none;
-    font-weight: 700;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-}
-
-.site-nav__link--active {
-    color: #fff;
-}
-
-.site-nav__link--accent-blue.site-nav__link--active {
-    border-bottom-color: #38bdf8;
-}
-
-.site-nav__link--accent-yellow.site-nav__link--active {
-    border-bottom-color: #fbbf24;
-}
-
-.ticker-value--green {
-    color: #4ade80;
-}
-
-.ticker-value--amber {
-    color: #fbbf24;
-}
-
+/* ============================================================
+   8. COMPONENTES EXTRAS (GRÁFICO, WHATSAPP, ETC)
+   ============================================================ */
 .chart-card {
-    margin-top: 25px;
     background: #0f172a;
     padding: 15px;
     border-radius: 10px;
     border: 1px solid #334155;
-}
-
-.is-hidden {
-    display: none;
-}
-
-.link-accent {
-    color: #38bdf8;
-    text-decoration: none;
-}
-
-.label-inline {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 15px;
-}
-
-.label-spaced {
-    margin-top: 15px;
-}
-
-.help-badge {
-    cursor: help;
-    background: #334155;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #38bdf8;
-    border: 1px solid #38bdf8;
-}
-
-.input--alt {
-    width: 100%;
-    padding: 12px;
-    background: #1e293b;
-    border: 1px solid #334155;
-    color: #fff;
-    border-radius: 8px;
-}
-
-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.btn-row {
-    display: flex;
-    gap: 10px;
     margin-top: 25px;
-    align-items: stretch;
 }
 
-.btn-row button {
-    width: auto;
-}
+.is-hidden { display: none; }
 
-.btn-grow-3 {
-    flex: 3;
-}
-
-.btn-grow-1 {
-    flex: 1;
-}
-
-.btn-secondary {
-    background: #334155;
-    color: #94a3b8;
-    border: 1px solid #475569;
-}
-
-.btn-secondary:hover {
-    background: #475569;
-}
-
-.btn-success {
-    background: #4ade80;
-    color: #000;
-}
-
-.btn-success:hover {
-    background: #22c55e;
-}
-
-.btn-warning {
-    background: #fbbf24;
-    color: #000;
-}
-
-.btn-warning:hover {
-    background: #f59e0b;
-}
-
-.btn-whatsapp {
-    background: #25d366;
-    color: #fff;
-    display: none;
-}
-
-.btn-whatsapp:hover {
-    background: #1ebe5a;
-}
-
-.lang-switch {
-    text-align: right;
-    margin-bottom: 20px;
-}
-
-.btn-lang {
-    width: auto;
-    padding: 5px 15px;
-    font-size: 0.8rem;
-    border-radius: 4px;
-    background: #eee;
-    color: #666;
-    border: none;
-    box-shadow: none;
-}
-
-.btn-lang--active {
-    background: #3483fa;
-    color: #fff;
-}
-
-.btn-lang--inactive {
-    background: #eee;
-    color: #666;
-}
-
-.artigo-seo {
-    margin-top: 40px;
+.page-back {
+    margin-top: 30px;
     border-top: 1px solid #334155;
     padding-top: 20px;
+    text-align: center;
+}
+
+.page-back__link { color: #38bdf8; text-decoration: none; font-weight: bold; }
+
+/* ============================================================
+   9. RESPONSIVIDADE (CELULAR)
+   ============================================================ */
+@media (max-width: 480px) {
+    .container { width: 95%; }
+    .cabecalho h1 { font-size: 1.8rem; }
+    .ticker-item { width: 48%; justify-content: center; background: #0f172a; padding: 8px; border-radius: 6px; }
+    .ticker-divider { display: none; }
+    .btn-row { flex-direction: column; gap: 10px; }
+}
+/* =========================================
+   AJUSTE DE CENTRALIZAÇÃO FINAL 
+   ========================================= */
+   
+/* Centraliza o container principal e as páginas de texto */
+.container, .page-main--centered, .page-card {
+    max-width: 600px !important; /* Mesma largura da sua index */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 92% !important; /* Dá um respiro nas bordas no celular */
+    float: none !important; /* Garante que nada "fuja" para os lados */
+}
+
+/* Centraliza os títulos e textos das páginas de Blog e Políticas */
+.page-card h1, 
+.page-card h2, 
+.page-card p, 
+.cabecalho, 
+.page-back {
+    text-align: center !important;
+}
+
+/* Ajuste para as listas (passo a passo) ficarem alinhadas à esquerda dentro do centro */
+.page-card ul, .page-card ol {
+    display: table;
+    margin: 0 auto 25px auto;
     text-align: left;
 }
 
-.artigo-seo--compact {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px 15px;
-}
-
-.artigo-seo h2 {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.artigo-seo p {
-    color: #94a3b8;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
-
-.artigo-seo p + p {
-    margin-top: 10px;
-}
-
-.seo-list {
-    line-height: 2;
-    color: #94a3b8;
-    list-style: none;
-    padding-left: 0;
-}
-
-.footer-disclaimer {
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-    line-height: 1.6;
-    color: #64748b;
-}
-
-.footer-contact {
-    margin: 10px 0;
-}
-
-.footer-links {
-    margin-top: 20px;
-    display: flex;
+/* Garante que o menu também não estique demais em telas grandes */
+.site-nav {
+    max-width: 100%;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+}
+/* =========================================
+   AJUSTE DE CENTRALIZAÇÃO E LARGURA FINAL 
+   ========================================= */
+
+/* Limita a largura de todas as páginas e cards para não esticarem */
+.container, 
+.page-main--centered, 
+.page-card, 
+.calculadora-box {
+    max-width: 650px !important; /* Largura ideal para leitura */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 92% !important;        /* Margem de respiro no celular */
+    float: none !important;
 }
 
-.footer-link {
-    color: #38bdf8;
-    text-decoration: none;
+/* Centraliza os títulos e textos informativos */
+.page-card h1, 
+.page-card h2, 
+.cabecalho h1, 
+.subtitulo,
+.page-back {
+    text-align: center !important;
 }
 
-.footer-email {
-    color: #3483fa;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.page-card {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-    box-sizing: border-box;
-}
-
-.page-card--narrow {
-    max-width: 600px;
-}
-
-.page-card--centered {
-    text-align: center;
-}
-
-.page-card h1 {
-    color: #1f2937;
-    font-size: 1.9rem;
-    margin-bottom: 20px;
-}
-
-.page-card h2 {
-    color: #1f2937;
-    font-size: 1.35rem;
-    margin-top: 30px;
-}
-
-.page-card p {
-    color: #475569;
+/* Garante que o texto dos artigos tenha um alinhamento confortável */
+.page-card p, .texto-artigo {
+    text-align: left !important;
     line-height: 1.8;
-    font-size: 1.05rem;
 }
 
-.page-card ul {
-    color: #475569;
-    line-height: 1.8;
-    margin-left: 18px;
+/* Ajuste para as listas (passo a passo) não "voarem" para a esquerda */
+.page-card ul, .page-card ol {
+    display: table;
+    margin: 0 auto 25px auto;
+    text-align: left;
 }
 
-.page-lead {
+/* Centraliza o seletor de idiomas */
+.lang-switch {
+    text-align: center !important;
     margin-bottom: 30px;
 }
 
-.page-back {
-    margin-top: 40px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
 
-.page-back__link {
-    color: #3483fa;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.contact-box {
-    background: #f8fafc;
-    padding: 25px;
+/* Container de texto para leitura agradável */
+.page-card, .artigo-seo {
+    background: #1e293b; /* Azul levemente mais claro que o fundo para dar profundidade */
     border-radius: 12px;
-    border: 2px dashed #3483fa;
-}
-
-.contact-email {
-    color: #3483fa;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-#resultado-salario,
-#resultado-13 {
-    margin-top: 20px;
-}
-
-.result-card {
-    background: #0f172a;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    line-height: 1.6; /* Aumenta o espaço entre linhas para não cansar a vista */
+    margin-bottom: 30px;
     border: 1px solid #334155;
-    margin-top: 20px;
-    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.result-card--success {
-    background: rgba(74, 222, 128, 0.1);
-    border-color: #4ade80;
-}
-
-.result-card--primary {
-    background: #0f172a;
-    border-color: #38bdf8;
-}
-
-.result-card--warning {
-    background: rgba(251, 191, 36, 0.1);
-    border-color: #fbbf24;
-}
-
-.result-label {
-    color: #94a3b8;
-    font-size: 0.9rem;
-}
-
-.result-value {
-    font-size: 2rem;
-    margin: 10px 0;
-}
-
-.result-value--success {
-    color: #4ade80;
-}
-
-.result-value--primary {
-    color: #38bdf8;
+/* Títulos potentes */
+.page-card h1, .artigo-seo h2 {
+    color: #38bdf8; /* Azul turquesa neon */
     font-size: 1.8rem;
-    margin: 0 0 15px 0;
+    margin-bottom: 20px;
+    border-left: 4px solid #38bdf8; /* Detalhe lateral elegante */
+    padding-left: 15px;
 }
 
-.result-value--warning {
-    color: #fbbf24;
+/* Subtítulos e listas */
+.artigo-seo h3 {
+    color: #f1c40f; /* Destaque em dourado para subseções */
+    margin-top: 25px;
 }
 
-.result-meta {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #334155;
-    padding-top: 10px;
-    font-size: 0.8rem;
-    color: #94a3b8;
+.seo-list li {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03); /* Fundo sutil para cada item da lista */
+    border-radius: 8px;
+    list-style: none;
 }
 
-.result-split {
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #334155;
-    padding-top: 15px;
-}
-
-.result-small {
-    font-size: 0.85rem;
-    color: #94a3b8;
+.seo-list li strong {
+    color: #38bdf8;
+    display: block; /* Joga o texto para a linha de baixo do emoji */
     margin-bottom: 5px;
 }
 
-.result-emphasis {
-    color: #fff;
+/* Container dos botões */
+.lang-switch {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 10px;                 /* Espaço entre eles */
+    margin-bottom: 20px;
+}
+
+/* O estilo dos botões pequenos */
+.btn-lang {
+    cursor: pointer;
+    padding: 5px 12px !important; /* Menor e mais delicado */
+    font-size: 12px !important;   /* Letra pequena e profissional */
+    border-radius: 4px;
+    border: 1px solid #3483fa;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: auto !important;       /* Garante que ele não fique enorme */
+    min-width: 80px;              /* Mas que tenha um tamanho mínimo legal */
+}
+/* Estilo Minimalista para Títulos das Páginas */
+.artigo-seo h1 {
+    border-left: 4px solid #3483fa; /* Barra lateral azul */
+    padding-left: 15px;
+    font-size: 1.8rem;
+    color: #f8fafc; /* Cor clara para o modo escuro */
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.5px;
+}
+
+/* Deixa os subtítulos mais sóbrios */
+.artigo-seo h3 {
+    color: #3483fa;
     font-size: 1.1rem;
+    margin-top: 20px;
+    font-weight: 600;
 }
 
-.result-emphasis--success {
-    color: #4ade80;
+/* Ajuste nos botões de idioma para ficarem discretos */
+.btn-lang {
+    border: 1px solid #444 !important;
+    background: transparent !important;
+    color: #999 !important;
+    font-size: 11px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.result-center {
-    text-align: center;
-    margin-bottom: 15px;
+.btn-lang--active { /* Se você usa essa classe para o botão ativo */
+    border-color: #3483fa !important;
+    color: #3483fa !important;
+    font-weight: bold;
 }
-
-.result-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: #fff;
-}
-
-.result-row {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.btn-lang--inactive:hover {
-    background: #e2e8f0;
-}
-
-.btn-lang--active:hover {
-    background: #2f6fd9;
-}
-
