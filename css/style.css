@@ -226,26 +226,35 @@ button:hover { transform: translateY(-2px); filter: brightness(1.1); }
 .page-back__link { color: #38bdf8; text-decoration: none; font-weight: bold; }
 
 /* ============================================================
-   9. RESPONSIVIDADE (CELULAR)
+   9. RESPONSIVIDADE (CELULAR) - AJUSTADO PARA 2 COLUNAS
    ============================================================ */
 @media (max-width: 480px) {
     .container { width: 95%; }
     .cabecalho h1 { font-size: 1.8rem; }
-    .ticker-item { width: 48%; justify-content: center; background: #0f172a; padding: 8px; border-radius: 6px; }
-    .ticker-divider { display: none; }
+
+    /* Ajuste da barra de indicadores para 2 colunas */
+    .market-ticker {
+        display: grid !important;          /* Ativa o modo grade */
+        grid-template-columns: 1fr 1fr;    /* Divide em 2 colunas iguais */
+        gap: 10px;                         /* Espaço entre os blocos */
+        padding: 10px;
+    }
+
+    .ticker-item {
+        width: 100% !important;            /* Ocupa toda a metade disponível */
+        justify-content: center;
+        background: #0f172a;               /* Fundo um pouco mais escuro que o card */
+        padding: 12px 5px;                 /* Mais respiro interno */
+        border-radius: 8px;
+        border: 1px solid #334155;         /* Bordas sutis */
+        font-size: 0.85rem;                /* Ajuste leve no tamanho da letra */
+    }
+
+    .ticker-divider { 
+        display: none !important;          /* Remove as barras verticais separadoras */
+    }
+
     .btn-row { flex-direction: column; gap: 10px; }
-}
-/* =========================================
-   AJUSTE DE CENTRALIZAÇÃO FINAL 
-   ========================================= */
-   
-/* Centraliza o container principal e as páginas de texto */
-.container, .page-main--centered, .page-card {
-    max-width: 600px !important; /* Mesma largura da sua index */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 92% !important; /* Dá um respiro nas bordas no celular */
-    float: none !important; /* Garante que nada "fuja" para os lados */
 }
 
 /* Centraliza os títulos e textos das páginas de Blog e Políticas */
