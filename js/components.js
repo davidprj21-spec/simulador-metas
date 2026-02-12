@@ -5,7 +5,7 @@ function loadHeader() {
 
     const headerHTML = `
     <nav class="site-nav menu-container">
-    <a href="${path}index.html" class="menu-item">
+        <a href="javascript:void(0)" onclick="carregarPagina('home')" class="menu-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="#4db8ff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
         <span class="menu-text">METAS</span>
     </a>
