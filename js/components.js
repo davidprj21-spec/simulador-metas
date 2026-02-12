@@ -4,12 +4,27 @@ function loadHeader() {
     const path = isSubFolder ? '../' : './';
 
     const headerHTML = `
-    <nav class="site-nav">
-        <a href="${path}index.html" class="site-nav__link"> Metas</a>
-        <a href="javascript:void(0)" onclick="carregarPagina('salario-liquido')" class="site-nav__link"> Salário</a>
-        <a href="javascript:void(0)" onclick="carregarPagina('13-salario')" class="site-nav__link"> 13º Salário</a>
-        <a href="javascript:void(0)" onclick="carregarPagina('blog')" class="site-nav__link"> Blog</a>
-    </nav>
+    <nav class="site-nav menu-container">
+    <a href="${path}index.html" class="menu-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4db8ff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+        <span class="menu-text">METAS</span>
+    </a>
+
+    <a href="javascript:void(0)" onclick="carregarPagina('salario-liquido')" class="menu-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M12 11h.01"></path><path d="M16 8h.01"></path><path d="M16 12h.01"></path><path d="M16 16h.01"></path></svg>
+        <span class="menu-text">SALÁRIO</span>
+    </a>
+
+    <a href="javascript:void(0)" onclick="carregarPagina('13-salario')" class="menu-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f1c40f" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+        <span class="menu-text">13º SALARIO</span>
+    </a>
+
+    <a href="javascript:void(0)" onclick="carregarPagina('blog')" class="menu-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        <span class="menu-text">BLOG</span>
+    </a>
+</nav>
     `;
     const headerElement = document.getElementById('universal-header');
     if (headerElement) headerElement.innerHTML = headerHTML;
