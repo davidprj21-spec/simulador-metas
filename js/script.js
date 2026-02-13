@@ -18,14 +18,14 @@ function formatarMoeda(elemento) {
     elemento.value = valor;
 }
 
-// 3. TraduÃ§Ã£o e ConfiguraÃ§Ãµes de InicializaÃ§Ã£o (RodapÃ© e Menu)
-window.addEventListener('load', () => {
+// 3. Tradução e Configurações de Inicialização (Rodapé e Menu)
+function aplicarTraducoes() {
     if (isInternational) {
-        // TraduÃ§Ãµes BÃ¡sicas do RodapÃ©
+        // Traduções Básicas do Rodapé
         if(document.getElementById('footer-rights')) document.getElementById('footer-rights').innerText = "All rights reserved.";
         if(document.getElementById('footer-dev')) document.getElementById('footer-dev').innerText = "Developed to help your financial freedom.";
         
-        // TraduÃ§Ã£o do Novo Aviso de IsenÃ§Ã£o (Disclaimer) e Contato
+        // Tradução do Novo Aviso de Isenção (Disclaimer) e Contato
         const disclaimer = document.getElementById('footer-disclaimer');
         if (disclaimer) {
             disclaimer.innerHTML = "<strong>Disclaimer:</strong> The calculations displayed are estimates based on current rates and are for informational purposes only. They do not constitute official financial advice or investment recommendations.";
@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
             contactText.innerText = "Contact:";
         }
 
-        // TraduÃ§Ã£o dos Links do RodapÃ©
+        // Tradução dos Links do Rodapé
         const linksFooter = document.querySelectorAll('footer a');
         if (linksFooter.length >= 4) {
             linksFooter[0].innerText = "About";
@@ -44,12 +44,12 @@ window.addEventListener('load', () => {
             linksFooter[3].innerText = "Terms of Use";
         }
 
-        // TraduÃ§Ãµes do Menu Superior
+        // Traduções do Menu Superior
         if(document.getElementById('nav-home')) document.getElementById('nav-home').innerText = "Home";
         if(document.getElementById('nav-salary')) document.getElementById('nav-salary').innerText = "Salary";
         if(document.getElementById('nav-13')) document.getElementById('nav-13').innerText = "13th Salary";
         
-        // TraduÃ§Ã£o de TÃ­tulos de PÃ¡ginas Institucionais
+        // Tradução de Títulos de Páginas Institucionais
         const tituloPrincipal = document.querySelector('h1');
         if (tituloPrincipal) {
             if (window.location.href.includes('sobre.html')) tituloPrincipal.innerText = "About Us";
@@ -58,7 +58,9 @@ window.addEventListener('load', () => {
             if (window.location.href.includes('politica.html')) tituloPrincipal.innerText = "Privacy Policy";
         }
     }
-});
+} // <--- Aqui fecha a função!
+
+
 
 // 4. FunÃ§Ã£o da Calculadora de SalÃ¡rio
 function calcularSalario() {
@@ -81,16 +83,25 @@ function calcularSalario() {
 
     const liquido = bruto - inss - irrf;
 
-    document.getElementById('resultado-salario').innerHTML = `
+ document.getElementById('resultado-salario').innerHTML = `
         <div class="result-card result-card--success">
             <p class="result-label">${isInternational ? 'Estimated Net Salary:' : 'Salário Líquido Estimado:'}</p>
             <h2 class="result-value result-value--success">${moedaSimbolo} ${liquido.toLocaleString(localeSet, {minimumFractionDigits: 2})}</h2>
-            <div class="result-meta">
-                <span>INSS: -${moedaSimbolo}${inss.toFixed(2)}</span>
-                <span>IRRF: -${moedaSimbolo}${irrf.toFixed(2)}</span>
+            
+            <div class="result-details">
+                <div class="result-row">
+                    <span>${isInternational ? 'INSS Deduction:' : 'Desconto INSS:'}</span>
+                    <span class="result-deduction">- ${moedaSimbolo} ${inss.toLocaleString(localeSet, {minimumFractionDigits: 2})}</span>
+                </div>
+                <div class="result-row">
+                    <span>${isInternational ? 'IRRF Deduction:' : 'Desconto IRRF:'}</span>
+                    <span class="result-deduction">- ${moedaSimbolo} ${irrf.toLocaleString(localeSet, {minimumFractionDigits: 2})}</span>
+                </div>
             </div>
         </div>
     `;
+    
+    // Mantém o botão do WhatsApp visível
     if(document.getElementById('btn-whatsapp')) document.getElementById('btn-whatsapp').style.display = 'flex';
 }
 

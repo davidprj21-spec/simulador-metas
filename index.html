@@ -44,9 +44,10 @@
    
 
     <div id="universal-footer"></div>
-
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
+    <script src="js/components.js"></script>
     <script>
+        // 1. Função para buscar as taxas (Selic, CDI, IPCA e Dólar)
         async function carregarTaxas() {
             try {
                 const response = await fetch('https://brasilapi.com.br/api/taxas/v1');
@@ -55,21 +56,38 @@
                 const cdi = dados.find(t => t.nome === 'CDI');
                 const ipca = dados.find(t => t.nome === 'IPCA');
 
-                if (selic) document.getElementById('taxa-selic').innerText = (selic.valor).toFixed(2) + '%';
-                if (cdi) document.getElementById('taxa-cdi').innerText = (cdi.valor).toFixed(2) + '%';
-                if (ipca) document.getElementById('taxa-ipca').innerText = (ipca.valor).toFixed(2) + '%';
+                if (selic && document.getElementById('taxa-selic')) document.getElementById('taxa-selic').innerText = selic.valor.toFixed(2) + '%';
+                if (cdi && document.getElementById('taxa-cdi')) document.getElementById('taxa-cdi').innerText = cdi.valor.toFixed(2) + '%';
+                if (ipca && document.getElementById('taxa-ipca')) document.getElementById('taxa-ipca').innerText = ipca.valor.toFixed(2) + '%';
 
                 const responseDolar = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL');
                 const dadosDolar = await responseDolar.json();
                 const valorDolar = parseFloat(dadosDolar.USDBRL.bid).toFixed(2);
-                
-                document.getElementById('taxa-dolar').innerText = 'R$ ' + valorDolar.replace('.', ',');
+                if (document.getElementById('taxa-dolar')) document.getElementById('taxa-dolar').innerText = 'R$ ' + valorDolar.replace('.', ',');
             } catch (error) {
                 console.log("Erro ao carregar taxas", error);
             }
         }
-        window.addEventListener('load', carregarTaxas);
+
+        // 2. O "Cérebro" que decide qual página abrir
+        window.addEventListener('load', () => {
+            carregarTaxas(); // Puxa os números da economia
+
+            if (typeof loadHeader === 'function') loadHeader(); // Carrega o menu
+            if (typeof loadFooter === 'function') loadFooter(); // Carrega o rodapé
+
+            // Espera 0,1 segundo para o site "respirar" e lê o link ?p=
+            setTimeout(() => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const paginaSolicitada = urlParams.get('p');
+
+                if (paginaSolicitada) {
+                    // Se o link tiver ?p=salario, ele abre a calculadora de salário
+                    carregarPagina(paginaSolicitada);
+                } else {
+                    // Se o link for só o site puro, abre a home
+                    carregarPagina('home');
+                }
+            }, 100); 
+        });
     </script>
-    <script src="js/components.js"></script>
-</body>
-</html>

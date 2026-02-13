@@ -225,6 +225,69 @@ button:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 .page-back__link { color: #38bdf8; text-decoration: none; font-weight: bold; }
 
+
+
+/* ============================================================
+   ESTILIZAÇÃO DOS RESULTADOS (DENTRO DOS CARDS)
+   ============================================================ */
+.result-card {
+    background: rgba(15, 23, 42, 0.5); /* Fundo um pouco mais escuro para destaque */
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 1px solid #334155;
+    text-align: center;
+}
+
+.result-label {
+    color: #94a3b8; /* Cinza claro */
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.result-value {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Cores específicas para cada tipo de resultado */
+.result-value--primary { color: #38bdf8 !important; } /* Azul para Metas */
+.result-value--success { color: #4ade80 !important; } /* Verde para Salário */
+.result-value--warning { color: #fbbf24 !important; } /* Amarelo para 13º */
+
+/* A parte que estava invisível (Abaixo do Gráfico) */
+.result-split {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #334155;
+    padding-top: 15px;
+}
+
+.result-small {
+    color: #94a3b8 !important; /* Texto explicativo claro */
+    font-size: 0.8rem;
+    display: block;
+}
+
+.result-emphasis {
+    color: #ffffff !important; /* Valor em branco puro */
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 4px;
+}
+
+.result-emphasis--success {
+    color: #4ade80 !important; /* Juros em verde vibrante */
+}
+
+
+
 /* ============================================================
    9. RESPONSIVIDADE (CELULAR) - AJUSTADO PARA 2 COLUNAS
    ============================================================ */
@@ -486,17 +549,53 @@ button:hover { transform: translateY(-2px); filter: brightness(1.1); }
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* --- AJUSTE PARA CELULAR --- */
-@media (max-width: 800px) {
-    .menu-container {
-        justify-content: space-around !important; /* Distribui uniforme na tela pequena */
-        gap: 0 !important; 
-        padding: 12px 5px !important;
+/* =========================================
+   AJUSTE DE CENTRALIZAÇÃO E LARGURA FINAL 
+   ========================================= */
+
+/* O Container principal: a alma do site */
+.container, 
+.page-main--centered, 
+.page-card, 
+.calculadora-box {
+    max-width: 800px !important; /* Aumentei de 650px para 800px para melhorar a leitura no PC */
+    margin: 20px auto !important; 
+    width: 95% !important;        
+    float: none !important;
+    position: relative; /* Ajuda o AdSense a se orientar */
+}
+
+/* Garante que o fundo ocupe a tela toda mas o conteúdo não espalhe */
+body {
+    overflow-x: hidden; /* Evita barra de rolagem lateral se o anúncio for grande */
+}
+
+/* Ajuste para o texto não ficar "socado" em telas muito grandes */
+@media (min-width: 1200px) {
+    .container {
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
     }
-    .menu-text {
-        font-size: 10px !important;
-    }
-    .menu-item {
-        min-width: 60px;
-    }
+}
+
+
+/* --- Estilos dos Detalhes do Resultado (Salário) --- */
+.result-details {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória suave */
+    font-size: 0.95rem;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between; /* Joga um pra esquerda e um pra direita */
+    align-items: center;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.result-deduction {
+    color: #ff8a80; /* Um vermelho suave e bonito */
+    font-weight: 600;
 }

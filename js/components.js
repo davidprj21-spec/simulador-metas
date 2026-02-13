@@ -36,6 +36,7 @@ function loadFooter() {
     <footer class="site-footer">
         <div class="footer-links">
             <a href="javascript:void(0)" onclick="carregarPagina('sobre')" class="footer-link">Sobre</a> |
+            <a href="javascript:void(0)" onclick="carregarPagina('contato')" class="footer-link">Contato</a> |
             <a href="javascript:void(0)" onclick="carregarPagina('faq')" class="footer-link">Faq</a> |
             <a href="javascript:void(0)" onclick="carregarPagina('politica')" class="footer-link">Politica</a> | 
             <a href="javascript:void(0)" onclick="carregarPagina('termos')" class="footer-link">Termos</a>
@@ -46,7 +47,6 @@ function loadFooter() {
     const footerElement = document.getElementById('universal-footer');
     if (footerElement) footerElement.innerHTML = footerHTML;
 }
-
 // Carrega tudo ao abrir a página
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
