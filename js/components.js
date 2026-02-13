@@ -60,9 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function carregarPagina(nomeDaPagina) {
     const alvo = document.getElementById('conteudo-dinamico');
-    if (!alvo) return; // Segurança caso a div não exista
+    if (!alvo) return; 
     
-    // Efeito visual de carregamento
     alvo.style.opacity = '0.5';
 
     fetch(`paginas/${nomeDaPagina}.html`)
@@ -75,14 +74,23 @@ function carregarPagina(nomeDaPagina) {
             alvo.style.opacity = '1';
             window.scrollTo(0, 0);
 
-            // Re-executa as taxas se voltarmos para a home
+            // --- NOVO: COMANDO PARA RECARREGAR ANÚNCIOS ADSENSE ---
+            try {
+                // Isso avisa ao Google que a página mudou e ele deve buscar novos anúncios
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                // Silencioso: evita erros caso o AdSense ainda não tenha carregado o script principal
+                console.log("AdSense: Aguardando inicialização ou bloco já preenchido.");
+            }
+            // -----------------------------------------------------
+
             if (nomeDaPagina === 'home' && typeof carregarTaxas === 'function') {
                 carregarTaxas();
             }
         })
         .catch(err => {
             console.error(err);
-            alvo.innerHTML = "<div class='page-card'><p style='color:red'>Erro ao carregar conteúdo. Verifique a pasta 'paginas'.</p></div>";
+            alvo.innerHTML = "<div class='page-card'><p style='color:red'>Erro ao carregar conteúdo.</p></div>";
             alvo.style.opacity = '1';
         });
 }
