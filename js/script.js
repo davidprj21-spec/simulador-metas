@@ -81,27 +81,32 @@ function calcularSalario() {
     else if (baseIRRF > 2826 && baseIRRF <= 3751) irrf = (baseIRRF * 0.15) - 381.44;
     else if (baseIRRF > 3751) irrf = (baseIRRF * 0.225) - 662.77;
 
-    const liquido = bruto - inss - irrf;
+    const liquido = bruto - inss - irrf; 
 
- document.getElementById('resultado-salario').innerHTML = `
+document.getElementById('resultado-salario').innerHTML = `
         <div class="result-card result-card--success">
             <p class="result-label">${isInternational ? 'Estimated Net Salary:' : 'Salário Líquido Estimado:'}</p>
-            <h2 class="result-value result-value--success">${moedaSimbolo} ${liquido.toLocaleString(localeSet, {minimumFractionDigits: 2})}</h2>
+            <h2 class="result-value result-value--success">
+                ${moedaSimbolo} ${liquido.toLocaleString(localeSet, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+            </h2>
             
             <div class="result-details">
                 <div class="result-row">
                     <span>${isInternational ? 'INSS Deduction:' : 'Desconto INSS:'}</span>
-                    <span class="result-deduction">- ${moedaSimbolo} ${inss.toLocaleString(localeSet, {minimumFractionDigits: 2})}</span>
+                    <span class="result-deduction">
+                        - ${moedaSimbolo} ${inss.toLocaleString(localeSet, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                    </span>
                 </div>
                 <div class="result-row">
                     <span>${isInternational ? 'IRRF Deduction:' : 'Desconto IRRF:'}</span>
-                    <span class="result-deduction">- ${moedaSimbolo} ${irrf.toLocaleString(localeSet, {minimumFractionDigits: 2})}</span>
+                    <span class="result-deduction">
+                        - ${moedaSimbolo} ${irrf.toLocaleString(localeSet, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+                    </span>
                 </div>
             </div>
         </div>
     `;
     
-    // Mantém o botão do WhatsApp visível
     if(document.getElementById('btn-whatsapp')) document.getElementById('btn-whatsapp').style.display = 'flex';
 }
 
